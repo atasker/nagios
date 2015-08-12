@@ -1,0 +1,65 @@
+<head>
+<meta http-equiv="refresh" content="30">
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+<script>
+        google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Status', 'Number'],
+          ['OK',       gon.statusOK],
+          ['WARNING',  gon.statusWARNING],
+          ['CRITICAL', gon.statusCRITICAL],
+        ]);
+
+
+        var options = {
+          colors: ['#33FE07', '#FFFF00', '#F83938'],
+          backgroundColor: 'transparent',
+          pieSliceBorderColor:"transparent",
+          width: '100%',
+          height: '100%',
+          pieHole: 0.3,
+          pieSliceText: 'none',
+          legend: 'none',
+          chartArea: {
+            left: "0%",
+            top: "0%",
+            height: "100%",
+            width: "100%"
+        }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+        chart.draw(data, options);
+      }
+</script>
+</head>
+
+<body>
+
+<span class="OK"><%= @statusOK %></span>
+<span class="WARNING"><%= @statusWARNING %></span>
+<span class="CRITICAL"><%= @statusCRITICAL %></span>
+
+<div class="container">
+
+<div id="chart_wrap">
+<div id="donut_single"></div>
+</div>
+
+</div>
+
+<!-- scrolling -->
+
+<% if @messages %>
+  <div class="ticker-wrap">
+  <div class="ticker">
+  <% @messages.each do |message| %>
+    <div class="ticker_item"><%= message.upcase %></div>
+  <% end %>
+  </div>
+  </div>
+<% end %>
+
+</body>

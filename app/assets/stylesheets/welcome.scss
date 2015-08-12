@@ -1,0 +1,152 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+    width:40%;
+    margin:10% auto;
+}
+
+#chart_wrap {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow:hidden;
+}
+
+#donut_single {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+}
+
+.OK {
+    position: fixed;
+    left: 1%;
+    top: 10px;
+    height: 175px;
+    width: 175px;
+    line-height: 175px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    background-color: #33FE07;
+    color: black;
+    text-align: center;
+    font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.WARNING {
+    position: fixed;
+    left: 1%;
+    top: 220px;
+    height: 175px;
+    width: 175px;
+    line-height: 175px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    background-color: #FFFF00;
+    color: black;
+    text-align: center;
+    font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.CRITICAL {
+    position: fixed;
+    left: 1%;
+    top: 430px;
+    height: 175px;
+    width: 175px;
+    line-height: 175px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    background-color: #F83938;
+    color: black;
+    text-align: center;
+    font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+/* scrolling text */
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-wrap {
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 4rem;
+  background-color: #F83938;
+  padding-left: 100%;
+}
+
+.ticker {
+
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  padding-right: 100%;
+
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  -moz-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 15s;
+  -moz-animation-duration: 15s;
+  animation-duration: 15s;
+
+}
+
+.ticker_item {
+
+    display: inline-block;
+
+    padding: 0 2rem;
+    font-size: 4rem;
+    font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
