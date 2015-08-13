@@ -54,14 +54,20 @@
 
 <!-- scrolling -->
 
-<% if @messages %>
-  <div class="ticker-wrap">
+<% if @messages.count > 0 %>
+  <div class="ticker-wrap" style="background-color: #F83938;">
   <div class="ticker">
   <% @messages.each do |message| %>
     <div class="ticker_item"><%= message.upcase %></div>
   <% end %>
   </div>
   </div>
+  <% else %>
+    <div class="ticker-wrap" style="background-color: #33FE07;">
+    <div class="ticker">
+    <div class="ticker_item">No Current Problems!</div>
+    </div>
+    </div>
 <% end %>
 
 </body>
