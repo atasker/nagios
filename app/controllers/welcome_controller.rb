@@ -19,6 +19,10 @@ class WelcomeController < ApplicationController
       @messages << message.inner_html
     end
 
+    @messagesWARNING = @doc.css('td.statusBGWARNING a').each do |message|
+      @messages << message.inner_html
+    end
+
     gon.statusOK = @statusOK
     gon.statusWARNING = @statusWARNING
     gon.statusCRITICAL = @statusCRITICAL
