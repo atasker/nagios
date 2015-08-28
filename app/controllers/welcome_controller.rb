@@ -20,12 +20,14 @@ class WelcomeController < ApplicationController
     end
 
     @messagesWARNING = @doc.css('td.statusBGWARNING a').each do |message|
-      @messages << message.inner_html
+      @host = @doc.xpath("//td[@class='statusBGWARNING']/a[text() = '#{message.inner_html}']/preceding::a[5]").text
+      @messages << "#{@host}: #{message.inner_html}"
     end
 
     gon.statusOK = @statusOK
     gon.statusWARNING = @statusWARNING
     gon.statusCRITICAL = @statusCRITICAL
+
   end
 
 end

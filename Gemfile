@@ -8,6 +8,7 @@ gem 'mechanize'
 gem 'nokogiri'
 gem 'turbolinks'
 gem 'gon'
+gem 'pry'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
