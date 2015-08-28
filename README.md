@@ -2,4 +2,4 @@
 
 #### An internal monitoring system to track activity and health across multiple servers.
 
-![screenshot](https://github.com/atasker/nagios/blob/master/app/assets/images/ss.png?raw=true)
+![screenshot](https://raw.github.com/atasker/nagios/master/app/assets/images/ss.png)
